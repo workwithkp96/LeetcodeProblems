@@ -10,6 +10,7 @@ public class Problem113_SumRootToLeaf {
 
     }
 
+    // recursive stack
     public void getPathSum(TreeNode root,int targetSum, List<Integer> temp){
         if(root==null)
             return;
@@ -22,6 +23,6 @@ public class Problem113_SumRootToLeaf {
         getPathSum(root.left,targetSum-root.val,temp);
         getPathSum(root.right, targetSum- root.val,temp);
 
-        temp.removeLast();
+        temp.remove(temp.size() - 1);
     }
 }
